@@ -269,3 +269,130 @@ body {
 .back-btn:active {
   transform: scale(0.95);
 }
+
+/* ESTILOS DE LA SECCIÓN MAPA */
+.map-section {
+  padding: 30px 15px;
+  text-align: center;
+}
+
+.map-container {
+  width: 100%;
+  height: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 3px solid var(--card-bg);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  margin-bottom: 15px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: grayscale(0.2) contrast(1.1); /* Estilo industrial que combina con el fondo */
+}
+
+.address-box {
+  background: var(--card-bg);
+  padding: 15px;
+  border-radius: 15px;
+  border: 1px solid #333;
+}
+
+.address-text {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 12px;
+}
+
+.map-link {
+  display: inline-block;
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border: 2px solid var(--gold);
+  padding: 8px 20px;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.map-link:hover {
+  background: var(--gold);
+  color: #000;
+}
+
+/* PIE DE PÁGINA (FOOTER) */
+.main-footer {
+  background-color: #0a0a0a;
+  padding: 40px 20px 120px 20px; /* El padding inferior evita que el botón de WhatsApp tape el texto */
+  border-top: 1px solid #222;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  width: 60px;
+  filter: grayscale(1);
+  opacity: 0.6;
+  margin-bottom: 20px;
+}
+
+.copyright {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.dev-credit {
+  font-size: 0.75rem;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.dev-credit strong {
+  color: var(--gold); /* Tu crédito resalta en color oro */
+}
+
+.footer-legal {
+  margin-bottom: 20px;
+}
+
+.footer-legal a {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.75rem;
+  transition: 0.3s;
+}
+
+.footer-legal a:hover {
+  color: var(--white);
+}
+
+.separator {
+  color: #333;
+  margin: 0 10px;
+}
+
+.social-mini {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-mini a {
+  color: #444;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+
+.social-mini a:hover {
+  color: var(--red);
+}
