@@ -1,0 +1,181 @@
+:root {
+  --gold: #ffcc00;
+  --red: #e60000;
+  --card-bg: rgba(20, 20, 20, 0.98);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("fondo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+  padding-bottom: 100px;
+}
+
+.app-header {
+  background: #000;
+  padding: 15px;
+  text-align: center;
+  border-bottom: 3px solid var(--red);
+}
+
+.mini-logo {
+  width: 50px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.brand-title {
+  font-family: "Bangers", cursive;
+  display: inline-block;
+  font-size: 2.2rem;
+  color: var(--gold);
+}
+
+.icon-nav {
+  display: flex;
+  justify-content: space-around;
+  background: #111;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-btn {
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.8rem;
+}
+.nav-btn i {
+  font-size: 1.5rem;
+  color: var(--red);
+  display: block;
+  margin-bottom: 5px;
+}
+
+.carousel-section {
+  padding: 20px 0 10px 15px;
+}
+.section-title {
+  font-family: "Bangers", cursive;
+  font-size: 1.8rem;
+  color: var(--gold);
+  margin-bottom: 15px;
+}
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding-bottom: 10px;
+  scrollbar-width: none;
+}
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+.food-card {
+  min-width: 200px;
+  background: var(--card-bg);
+  border-radius: 15px;
+  border: 1px solid #333;
+  text-decoration: none;
+  color: #fff;
+  overflow: hidden;
+}
+
+.food-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+.info {
+  padding: 12px;
+  text-align: center;
+}
+.price {
+  color: var(--gold);
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.view-all-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  border: 2px solid var(--gold);
+}
+
+.btn-whatsapp-fixed {
+  position: fixed;
+  bottom: 15px;
+  left: 5%;
+  width: 90%;
+  background: #25d366;
+  color: #fff;
+  text-align: center;
+  padding: 18px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  z-index: 2000;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.menu-row {
+  display: flex;
+  background: var(--card-bg);
+  margin: 10px 15px;
+  border-radius: 12px;
+  padding: 10px;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  border-left: 5px solid var(--red);
+}
+
+.menu-row img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 15px;
+}
+
+.map-container {
+  width: 92%;
+  margin: 10px auto;
+  height: 250px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.back-btn {
+  display: inline-block;
+  background: var(--red);
+  color: white !important;
+  padding: 12px 25px;
+  border-radius: 8px;
+  margin: 20px 15px;
+  font-weight: bold;
+  text-decoration: none;
+}
