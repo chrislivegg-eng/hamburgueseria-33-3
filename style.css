@@ -1,3 +1,4 @@
+/* VARIABLES Y BASE */
 :root {
   --gold: #ffcc00;
   --red: #e60000;
@@ -19,9 +20,10 @@ body {
   color: #fff;
   font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
-  padding-bottom: 100px;
+  padding-bottom: 110px; /* Espacio para el botón de WhatsApp */
 }
 
+/* HEADER Y NAVEGACIÓN */
 .app-header {
   background: #000;
   padding: 15px;
@@ -33,6 +35,7 @@ body {
   width: 50px;
   vertical-align: middle;
   margin-right: 10px;
+  border-radius: 50%;
 }
 
 .brand-title {
@@ -40,133 +43,215 @@ body {
   display: inline-block;
   font-size: 2.2rem;
   color: var(--gold);
+  letter-spacing: 1px;
+}
+
+.brand-title span {
+  color: #fff;
 }
 
 .icon-nav {
   display: flex;
   justify-content: space-around;
   background: #111;
-  padding: 15px 0;
+  padding: 12px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .nav-btn {
   color: #fff;
   text-decoration: none;
   text-align: center;
-  font-size: 0.8rem;
-}
-.nav-btn i {
-  font-size: 1.5rem;
-  color: var(--red);
-  display: block;
-  margin-bottom: 5px;
+  font-size: 0.75rem;
+  transition: 0.3s;
 }
 
-.carousel-section {
-  padding: 20px 0 10px 15px;
+.nav-btn i {
+  font-size: 1.4rem;
+  color: var(--red);
+  display: block;
+  margin-bottom: 3px;
 }
+
+/* SECCIONES Y CARRUSEL */
+.carousel-section {
+  position: relative; /* Para posicionar la flecha indicadora */
+  padding: 25px 0 10px 15px;
+}
+
 .section-title {
   font-family: "Bangers", cursive;
   font-size: 1.8rem;
   color: var(--gold);
   margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+
 .carousel-container {
   display: flex;
   overflow-x: auto;
+  scroll-snap-type: x mandatory;
   gap: 15px;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
   scrollbar-width: none;
+  scroll-behavior: smooth;
 }
+
 .carousel-container::-webkit-scrollbar {
   display: none;
 }
 
+/* TARJETAS DE COMIDA */
 .food-card {
-  min-width: 200px;
+  min-width: 80%; /* Importante: 80% permite que la siguiente tarjeta se asome */
   background: var(--card-bg);
   border-radius: 15px;
   border: 1px solid #333;
   text-decoration: none;
   color: #fff;
   overflow: hidden;
+  scroll-snap-align: center;
+  transition: transform 0.2s;
+}
+
+.food-card:active {
+  transform: scale(0.98);
 }
 
 .food-card img {
   width: 100%;
-  height: 140px;
+  height: 160px;
   object-fit: cover;
 }
+
 .info {
   padding: 12px;
   text-align: center;
 }
-.price {
-  color: var(--gold);
-  font-size: 1.3rem;
-  font-weight: bold;
+
+.info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  text-transform: uppercase;
 }
 
+.price {
+  color: var(--gold);
+  font-size: 1.4rem;
+  font-weight: bold;
+  display: block;
+}
+
+/* TARJETA VER TODAS (DISEÑO NEÓN) */
 .view-all-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #000;
+  background: linear-gradient(145deg, #111, #000);
   border: 2px solid var(--gold);
+  min-width: 150px;
+  box-shadow: inset 0 0 10px rgba(255, 204, 0, 0.2);
 }
 
+.view-all-card i {
+  font-size: 2.5rem;
+  color: var(--gold);
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px var(--gold);
+}
+
+/* SEÑAL VISUAL (FLECHA ANIMADA) */
+.scroll-indicator {
+  position: absolute;
+  right: 15px;
+  top: 60%;
+  transform: translateY(-50%);
+  background: rgba(255, 204, 0, 0.9);
+  color: #000;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: none; /* No interfiere con el tacto */
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+  animation: bounceRight 1.5s infinite;
+}
+
+@keyframes bounceRight {
+  0%,
+  100% {
+    transform: translateY(-50%) translateX(0);
+  }
+  50% {
+    transform: translateY(-50%) translateX(8px);
+  }
+}
+
+/* BOTÓN WHATSAPP FIJO */
 .btn-whatsapp-fixed {
   position: fixed;
-  bottom: 15px;
+  bottom: 20px;
   left: 5%;
   width: 90%;
   background: #25d366;
   color: #fff;
   text-align: center;
-  padding: 18px;
+  padding: 16px;
   border-radius: 50px;
   font-weight: bold;
   font-size: 1.1rem;
   text-decoration: none;
   z-index: 2000;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
+/* LISTADO VERTICAL (PÁGINAS SECUNDARIAS) */
 .menu-row {
   display: flex;
   background: var(--card-bg);
-  margin: 10px 15px;
+  margin: 12px 15px;
   border-radius: 12px;
-  padding: 10px;
+  padding: 12px;
   align-items: center;
   text-decoration: none;
   color: #fff;
   border-left: 5px solid var(--red);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .menu-row img {
-  width: 80px;
-  height: 80px;
+  width: 75px;
+  height: 75px;
   object-fit: cover;
   border-radius: 8px;
   margin-right: 15px;
 }
 
+.item-details h3 {
+  font-size: 1rem;
+  color: var(--gold);
+  margin-bottom: 3px;
+}
+
+/* MAPA Y OTROS */
 .map-container {
   width: 92%;
-  margin: 10px auto;
+  margin: 20px auto;
   height: 250px;
   border-radius: 15px;
   overflow: hidden;
-}
-.map-container iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
+  border: 2px solid #333;
 }
 
 .back-btn {
@@ -178,4 +263,9 @@ body {
   margin: 20px 15px;
   font-weight: bold;
   text-decoration: none;
+  transition: 0.3s;
+}
+
+.back-btn:active {
+  transform: scale(0.95);
 }
