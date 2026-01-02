@@ -166,10 +166,24 @@
     <footer class="main-footer">
         <div class="footer-content">
             <img src="logo.png" alt="Logo 33:3" class="footer-logo">
-
             <div class="footer-info">
                 <p class="copyright">&copy; 2026 Hamburguesería 33:3. Todos los derechos reservados.</p>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('Menú listo para modo offline', reg))
+                    .catch(err => console.log('Error al registrar', err));
+            });
+        }
+    </script>
+</body>
+
+</html>
 </body>
 
 </html>
